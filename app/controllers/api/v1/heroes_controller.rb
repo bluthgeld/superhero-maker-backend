@@ -1,8 +1,7 @@
 class Api::V1::HeroesController < ApplicationController
 
   def index
-    heroes = Hero.all
-    render json: heroes
+    render json: Hero.all
   end
 
 

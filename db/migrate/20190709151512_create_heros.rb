@@ -4,6 +4,7 @@ class CreateHeros < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :last_name
       t.string :hero_name
+      t.string :motto
       t.string :parents_email
       t.string :color_one
       t.string :color_two

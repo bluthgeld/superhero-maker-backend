@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hero_id: MyString
+  power_id: MyString
+  power_level: MyString
+
+two:
+  hero_id: MyString
+  power_id: MyString
+  power_level: MyString

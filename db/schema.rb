@@ -10,15 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_09_151512) do
+ActiveRecord::Schema.define(version: 2019_07_09_210637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hero_powers", force: :cascade do |t|
+    t.integer "hero_id"
+    t.integer "power_id"
+    t.integer "power_level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "heros", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "hero_name"
+    t.string "motto"
     t.string "parents_email"
     t.string "color_one"
     t.string "color_two"
@@ -26,6 +35,15 @@ ActiveRecord::Schema.define(version: 2019_07_09_151512) do
     t.string "origin_location"
     t.string "dob"
     t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "powers", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "how_acquired"
+    t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
