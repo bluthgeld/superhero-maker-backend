@@ -6,10 +6,22 @@ class Api::V1::HeroesController < ApplicationController
 
 
   def show
-
     hero = Hero.find_by(id: params[:id])
     render json: hero
-
   end
 
+  def create
+
+    new_hero = Hero.create(hero_params)
+
+    render json: new_hero
+    
+  end
+
+private
+  def hero_params
+
+    params.require(:hero).permit(:first_name, :last_name, :hero_name, :motto, :parents_email, :color_one, :color_two, :origin_story, :origin_location, :dob, :img)
+
+  end
 end
