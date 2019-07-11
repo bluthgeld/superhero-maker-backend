@@ -14,6 +14,12 @@ class Api::V1::HeroesController < ApplicationController
     render json: new_hero
   end
 
+  def update
+    update_hero = Hero.find_by(id: params[:id])
+    update_hero.update(hero_params)
+    render json: update_hero
+  end
+
 
 private
   def hero_params
