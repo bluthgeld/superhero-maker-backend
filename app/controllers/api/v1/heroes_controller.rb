@@ -20,6 +20,11 @@ class Api::V1::HeroesController < ApplicationController
     render json: update_hero
   end
 
+  def destroy
+    dest = Hero.find_by(id: params[:id])
+    dest.destroy
+    render json: dest
+  end
 
 private
   def hero_params
